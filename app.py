@@ -40,10 +40,13 @@ Score:
 Antwort:
 '''
 
-        response = openai.ChatCompletion.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}]
-        )
+response = client.chat.completions.create(
+  model="gpt-4o",
+  messages=[
+    {"role": "user", "content": prompt}
+  ]
+)
+
         
         ergebnis = response.choices[0].message.content
         st.success("✅ Analyse abgeschlossen")
